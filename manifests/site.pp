@@ -1,2 +1,2 @@
-include apache
+include profiles::httpd
 include profiles::herbalscents

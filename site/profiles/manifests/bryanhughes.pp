@@ -5,14 +5,17 @@
 class profiles::bryanhughes {
 
   apache::vhost { 'bryanhughes.me':
-    port  => '80',
+    port    => '80',
     docroot => '/var/www/bryanhughes.me',
+    aliases => [ {  alias => '/owncloud',
+                    path  => '/var/www/html/owncloud', }
+    ],
   }
 
   vcsrepo { '/var/www/bryanhughes.me':
-    ensure => latest,
+    ensure   => latest,
     provider => git,
-    source => 'https://github.com/blhughes/bryanhughes.me.git',
+    source   => 'https://github.com/blhughes/bryanhughes.me.git',
   }
 
 }

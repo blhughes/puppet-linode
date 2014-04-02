@@ -3,6 +3,7 @@ forge "http://forge.puppetlabs.com"
 #Needed forge modules go here
 mod "puppetlabs/stdlib"
 mod "puppetlabs/firewall"
+mod "puppetlabs/apache"
 
 
 mod 'vcsrepo',

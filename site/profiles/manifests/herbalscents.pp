@@ -4,10 +4,10 @@ class profiles::herbalscents {
 
 
   apache::vhost { 'herbal-scents.com':
-    port      => '80',
-    docroot   => '/var/www/herbal-scents',
-    directory => {  path     => '/var/www/herbal-scents',
-                    rewrites => [ {  rewrite_base => '/',
+    port        => '80',
+    docroot     => '/var/www/herbal-scents',
+    directories => [{  path     => '/var/www/herbal-scents',
+                      rewrites => [ {  rewrite_base => '/',
                                     rewrite_rule => [ '^index\.php$ - [L]',
                                                       '. /index.php [L]'
                                     ],
@@ -16,7 +16,7 @@ class profiles::herbalscents {
                                     ]
                                   }
                     ],
-    }
+    }]
   }
 
   vcsrepo { '/var/www/herbal-scents':

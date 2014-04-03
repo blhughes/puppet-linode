@@ -19,6 +19,6 @@ class profiles::herbalscents {
     ensure   => latest,
     provider => git,
     source   => 'https://github.com/WordPress/WordPress.git',
-    revision => 'master',
+    revision => '3.8-branch',
   }
 }

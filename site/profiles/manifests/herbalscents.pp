@@ -8,12 +8,10 @@ class profiles::herbalscents {
     docroot     => '/var/www/herbal-scents',
     directories => [{ path     => '/var/www/herbal-scents',
                       rewrites => [ { rewrite_base => '/'},
-                                    { rewrite_rule => [ '^index\.php$ - [L]',
-                                                      '. /index.php [L]'
-                                                      ]
+                                    { rewrite_rule => [ '^index\.php$ - [L]' ]
                                     },
                                     { rewrite_cond => [ '%{REQUEST_FILENAME} !-f',
-                                                      '%{REQUEST_FILENAME} !-d'
+                                                        '%{REQUEST_FILENAME} !-d',
                                                       ],
                                       rewrite_rule => [ '. /index.php [L]' ],
                                     }

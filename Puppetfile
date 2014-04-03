@@ -9,7 +9,7 @@ mod "puppetlabs/concat"
 
 mod 'apache',
   :git => 'https://github.com/blhughes/puppetlabs-apache.git',
-  :ref => 'vhost-dir-rewrites'
+  :ref => 'devel'
     
 
 

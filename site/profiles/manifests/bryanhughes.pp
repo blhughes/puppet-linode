@@ -16,6 +16,7 @@ class profiles::bryanhughes {
     ensure   => latest,
     provider => git,
     source   => 'https://github.com/blhughes/bryanhughes.me.git',
+    revision => 'master',
   }
 
 }

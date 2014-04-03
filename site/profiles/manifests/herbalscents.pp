@@ -6,15 +6,17 @@ class profiles::herbalscents {
   apache::vhost { 'herbal-scents.com':
     port        => '80',
     docroot     => '/var/www/herbal-scents',
-    directories => [{  path     => '/var/www/herbal-scents',
-                      rewrites => [ {  rewrite_base => '/',
-                                    rewrite_rule => [ '^index\.php$ - [L]',
+    directories => [{ path     => '/var/www/herbal-scents',
+                      rewrites => [ { rewrite_base => '/'},
+                                    { rewrite_rule => [ '^index\.php$ - [L]',
                                                       '. /index.php [L]'
-                                    ],
-                                    rewrite_cond => [ '%{REQUEST_FILENAME} !-f',
+                                                      ]
+                                    },
+                                    { rewrite_cond => [ '%{REQUEST_FILENAME} !-f',
                                                       '%{REQUEST_FILENAME} !-d'
-                                    ]
-                                  }
+                                                      ],
+                                      rewrite_rule => [ '. /index.php [L]' ],
+                                    }
                     ],
     }]
   }
